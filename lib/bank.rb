@@ -4,6 +4,7 @@ require_relative "credit_card"
 class Bank
 	attr_reader :credit_cards
 
+	#check out ruby 2.0 keyword arguments
 	def initialize(options={})
 		#refactor enumerable
 		hash = Hash.new
@@ -30,8 +31,8 @@ class Bank
 		card.valid? ? card.credit(dollars) : return
 	end
 
-	def to_json(options={})	
-		@credit_cards.values.to_json 
+	def to_json(options={})
+		@credit_cards.values.to_json
 	end
 
 	def self.json_create(json)
